@@ -1,0 +1,46 @@
+<div class="app-wrap">
+    <header class="flex flex-grow">
+        <nav class="navbar flex flex-grow">
+          <div class="logo">
+            <a href="#">Weather App</a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><button (click)="onLogout()">Logout</button></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+      </header>
+  
+    <header>
+      <input
+        type="text"
+        autocomplete="off"
+        class="search-box"
+        placeholder="Search for a city"
+        [(ngModel)]="city"
+        (keyup.enter)="getWeather()"
+      />
+    </header>
+  
+    <main *ngIf="weatherData">
+      <section class="location">
+        <div class="city">{{ weatherData.name }}, {{ weatherData.sys.country }}</div>
+        <div class="date">{{ weatherData.dt | date: 'fullDate' }}</div>
+      </section>
+  
+      <div class="current">
+        <div class="temp">{{ weatherData.main.temp }}<span>°C</span></div>
+        <div class="weather">{{ weatherData.weather[0].description }}</div>
+        <div class="hi-low">{{ weatherData.main.temp_min }}°C / {{ weatherData.main.temp_max }}°C</div>
+      </div>
+    </main>
+  </div>
+  
+  <router-outlet></router-outlet>
+  

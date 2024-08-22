@@ -1,0 +1,35 @@
+<div class="app-wrap">
+<header class="flex flex-grow" >
+    <nav class="navbar flex flex-grow">
+      <div class="logo">
+        <a href="index.html">Weather App</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/signup">Signup</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <div class="login-section">
+    <h1>Login</h1>
+    <form id="login-form" class="login-form" autocomplete="off" (ngSubmit)="onLogin()">
+      <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+      <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  
+
+  <script src="index.js"></script>
+</div>
